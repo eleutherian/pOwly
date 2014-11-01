@@ -1,4 +1,6 @@
 from django.db import models
+from datetime import datetime
+
 
 # Create your models here.
 
@@ -30,8 +32,8 @@ class Tutorial(models.Model):
     title = models.CharField(max_length=256)
     description = models.CharField(max_length=2048)
     author = models.ForeignKey(User) # From User app
-    date_created = models.DateTimeField('date_created')
-    date_modified = models.DateTimeField('date_modified')
+    date_created = models.DateTimeField('date_created', auto_now_add=True)
+    date_modified = models.DateTimeField('date_modified', auto_now_add=True)
     upvotes = models.IntegerField(default=1)
     downvotes = models.IntegerField(default=0)
     # tags = TaggableManager() #See: https://github.com/alex/django-taggit

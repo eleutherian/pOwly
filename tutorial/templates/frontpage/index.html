@@ -1,0 +1,10 @@
+<h1>This is a list of tutorials:</h1>
+{% if tutorials %}
+    <ul>
+    {% for tutorial in tutorials %}
+        <li>{{tutorial.title}}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    Nothing to show
+{% endif %}
